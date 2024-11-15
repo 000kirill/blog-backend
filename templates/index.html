@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
-    {% load static %}
-    {% block title %}
-    <title>Sensive Blog - Home</title>
-    {% endblock %}
-{% block content %}
-
+{% load static %}
+{% block title %}
+<title>Sensive Blog - Home</title>
+{% endblock %}
+    {% block content %}
       <!--================Hero Banner start =================-->  
       <section class="mb-30px">
         <div class="container">
@@ -52,13 +51,13 @@
           <div class="row">
             <div class="col-lg-8">
               {% for post in fresh_posts %}
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  {% if post.image_url %}
+                <div class="single-recent-blog-post">
+                  <div class="thumb">
+                {% if post.image_url %}
                   <img class="img-fluid" src="{{post.image_url}}" alt="">
-                  {% else %}
+                {% else %}
                   <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
-                  {% endif %}
+                {% endif %}
                   <ul style = "max-width: 550px;" class="thumb-info">
                     <li><a href="{% url 'post_detail' slug=post.slug %}"><i class="ti-user"></i>{{post.author}}</a></li>
                     <li><a href="{% url 'post_detail' slug=post.slug %}"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
@@ -125,8 +124,7 @@
           </div>
         </div>
       </section>
-
-      {% endblock %}
+    {% endblock %}
 
 
       

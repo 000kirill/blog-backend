@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-    {% load static %}
-    {% load static %}
-    {% block title %}
-    <title>{{ post.title }} - Blog Details</title>
-    {% endblock %}
-{% block content %}
+{% load static %}
+{% load static %}
+{% block title %}
+<title>{{ post.title }} - Blog Details</title>
+{% endblock %}
+  {% block content %}
   <!--================ Hero sm Banner start =================-->      
     <section class="mb-30px">
       <div class="container">
@@ -13,7 +13,7 @@
             <h1>Blog details</h1>
             <nav aria-label="breadcrumb" class="banner-breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
               </ol>
             </nav>
@@ -27,11 +27,6 @@
     <!--================ Start Blog Post Area =================-->
     
     <section class="blog-post-area section-margin">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="main_blog_details">
-              <img class="img-fluid" src="{{post.image_url}}" alt="">
               <h4>{{post.title}}</h4>
               <div class="user_details">
                 <div class="mt-sm-0 mt-3">
@@ -61,23 +56,23 @@
             <div class="comments-area">
               <h4>{{post.comments|length}} Comments</h4>
               {% for comment in post.comments %}
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      
-                      <h5><a href="#"></a>{{comment.author}}</h5>
-                      <p class="date">{{comment.published_at}} </p>
-                      <p class="comment">
-                        {{comment.text}}
-                      </p>
+                <div class="comment-list">
+                  <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                      <div class="desc">
+                        
+                        <h5><a href="#"></a>{{comment.author}}</h5>
+                        <p class="date">{{comment.published_at}} </p>
+                        <p class="comment">
+                          {{comment.text}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="reply-btn">
+                            <a href="" class="btn-reply text-uppercase">reply</a> 
                     </div>
                   </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	
+                </div>	
               {% endfor %}
               <div class="comment-list">
                 <div class="single-comment justify-content-between d-flex">
@@ -140,4 +135,4 @@
       </div>
     </section>
     <!--================ End Blog Post Area =================-->
-    {% endblock %}
+  {% endblock %}
